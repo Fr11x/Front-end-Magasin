@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'panier', component: PanierComponent },
   { path: 'commande', component: CommandeComponent },
   { path: 'produit', component: ProduitComponent},
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  { path: '', redirectTo: '/produit', pathMatch: 'full' }
 ];
 
 @NgModule({

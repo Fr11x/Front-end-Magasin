@@ -4,13 +4,15 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   imports: [ 
       ReactiveFormsModule,
-      CommonModule
+      CommonModule,
+      RouterModule
     ]
 })
 export class LoginComponent {
