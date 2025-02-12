@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Liste des produits</h2>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>  
+          <th>Désignation</th>
+          <th>Stock</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let inventaire of inventaires">
+          <td>{{ inventaire.designation }}</td>
+          <td>{{ inventaire.stock ?? 'Non défini' }}</td>
+          <td>{{ inventaire.puHt ?? 'Non défini' }} €</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="inventaires.length === 0" class="alert alert-warning text-center mt-3">
+    Aucun inventaire disponible.
+  </div>
+</div>

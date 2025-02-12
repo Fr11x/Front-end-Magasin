@@ -1,0 +1,48 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg p-4">
+        <h2 class="text-center mb-4">Inscription</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+          <div class="mb-3">
+            <label for="nom" class="form-label">Nom</label>
+            <input id="nom" class="form-control" formControlName="nom" />
+            <div class="text-danger" *ngIf="registerForm.get('nom')?.invalid && registerForm.get('nom')?.touched">
+              <small *ngIf="registerForm.get('nom')?.hasError('required')">Le nom est requis.</small>
+              <small *ngIf="registerForm.get('nom')?.hasError('notString')">Le nom doit être une chaîne de caractères.</small>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="prenom" class="form-label">Prénom</label>
+            <input id="prenom" class="form-control" formControlName="prenom" />
+            <div class="text-danger" *ngIf="registerForm.get('prenom')?.invalid && registerForm.get('prenom')?.touched">
+              <small *ngIf="registerForm.get('prenom')?.hasError('required')">Le prénom est requis.</small>
+              <small *ngIf="registerForm.get('prenom')?.hasError('notString')">Le prénom doit être une chaîne de caractères.</small>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="adresse" class="form-label">Adresse</label>
+            <input id="adresse" class="form-control" formControlName="adresse" />
+            <div class="text-danger" *ngIf="registerForm.get('adresse')?.invalid && registerForm.get('adresse')?.touched">
+              <small *ngIf="registerForm.get('adresse')?.hasError('required')">L'adresse est requise.</small>
+              <small *ngIf="registerForm.get('adresse')?.hasError('notString')">L'adresse doit être une chaîne de caractères.</small>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="mdp" class="form-label">Mot de passe</label>
+            <input id="mdp" type="password" class="form-control" formControlName="mdp" />
+            <div class="text-danger" *ngIf="registerForm.get('mdp')?.invalid && registerForm.get('mdp')?.touched">
+              <small *ngIf="registerForm.get('mdp')?.hasError('required')">Le mot de passe est requis.</small>
+              <small *ngIf="registerForm.get('mdp')?.hasError('minlength')">Le mot de passe doit comporter au moins 6 caractères.</small>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100" [disabled]="registerForm.invalid">Soumettre</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
